@@ -35,8 +35,8 @@ const getIcon = computed(() => {
 <style lang="scss" scoped>
 .icon {
   align-items: center;
-  fill: $black;
   display: inline-flex;
+  fill: $black;
   height: 50px;
   justify-content: center;
   padding: rem(15);
