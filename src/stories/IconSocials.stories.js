@@ -1,7 +1,7 @@
 import IconSocials from '@/components/elements/IconSocials.vue'
 
 export default {
-  title: 'Elements/Socials',
+  title: 'Elements/Icons/Socials',
   component: IconSocials,
   argTypes: {
     name: {
