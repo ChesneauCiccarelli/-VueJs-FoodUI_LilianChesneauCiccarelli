@@ -1,0 +1,29 @@
+import IconSocials from '@/components/elements/IconSocials.vue'
+
+export default {
+  title: 'Elements/Socials',
+  component: IconSocials,
+  argTypes: {
+    name: {
+      control: 'select',
+      options: ['Facebook', 'Instagram', 'LinkedIn', 'Twitter']
+    }
+  }
+}
+
+export const Icon = {
+  render: (args) => {
+    return {
+      components: {
+        IconSocials
+      },
+      setup() {
+        return { args }
+      },
+      template: `<IconSocials v-bind="args" />`
+    }
+  },
+  args: {
+    name: 'Twitter'
+  }
+}
