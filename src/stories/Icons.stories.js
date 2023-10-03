@@ -1,7 +1,7 @@
 import Icons from '@/components/elements/Icons.vue'
 
 export default {
-  title: 'Elements/Icons/Ui',
+  title: 'Elements/Ui-Icons',
   component: Icons,
   argTypes: {
     name: {
@@ -165,11 +165,11 @@ export const Food_1 = {
   }
 }
 
-export const Food_1Primary = {
+export const Food_1Secondary = {
   ...ArrowLeft,
   args: {
     name: 'Food_1',
-    variant: 'Primary',
+    variant: 'Secondary',
     size: 'Medium'
   }
 }
@@ -183,11 +183,11 @@ export const Food_2 = {
   }
 }
 
-export const Food_2Primary = {
+export const Food_2Secondary = {
   ...ArrowLeft,
   args: {
     name: 'Food_2',
-    variant: 'Primary',
+    variant: 'Secondary',
     size: 'Medium'
   }
 }
@@ -201,11 +201,11 @@ export const Delivery = {
   }
 }
 
-export const DeliveryPrimary = {
+export const DeliverySecondary = {
   ...ArrowLeft,
   args: {
     name: 'Delivery',
-    variant: 'Primary',
+    variant: 'Secondary',
     size: 'Medium'
   }
 }
@@ -257,6 +257,42 @@ export const Star = {
   args: {
     name: 'Star',
     variant: 'Default',
+    size: 'Small'
+  }
+}
+
+export const Facebook = {
+  ...ArrowLeft,
+  args: {
+    name: 'Facebook',
+    variant: 'Secondary',
+    size: 'Small'
+  }
+}
+
+export const Instagram = {
+  ...ArrowLeft,
+  args: {
+    name: 'Instagram',
+    variant: 'Secondary',
+    size: 'Small'
+  }
+}
+
+export const LinkedIn = {
+  ...ArrowLeft,
+  args: {
+    name: 'LinkedIn',
+    variant: 'Secondary',
+    size: 'Small'
+  }
+}
+
+export const Twitter = {
+  ...ArrowLeft,
+  args: {
+    name: 'Twitter',
+    variant: 'Secondary',
     size: 'Small'
   }
 }

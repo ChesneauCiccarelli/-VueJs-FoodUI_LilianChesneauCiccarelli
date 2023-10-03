@@ -1,7 +1,7 @@
 import MyButton from '@/components/elements/MyButton.vue'
 
 export default {
-  title: 'Elements/Buttons/MainButton',
+  title: 'Elements/Buttons',
   component: MyButton,
   argTypes: {
     href: {
