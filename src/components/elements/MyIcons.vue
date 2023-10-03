@@ -87,46 +87,59 @@ const getIcon = computed(() => {
 <style lang="scss" scoped>
 .icon {
   align-items: center;
-  fill: $black;
+  color: $black;
   display: inline-flex;
   height: 20px;
   justify-content: center;
   padding: rem(15);
   width: 20px;
+  svg {
+    height: 20px;
+    width: 20px;
+  }
 
   &.-primary {
     background-color: $primary-color;
     border-radius: 100%;
+    color: $white;
     fill: $white;
   }
 
   &.-secondary {
     background-color: $secondary-color;
     border-radius: 100%;
-    fill: $primary-color;
+    color: $primary-color;
   }
 
   &.-white {
     background-color: $white;
     border-radius: 100%;
-    fill: $black;
+    color: $black;
     box-shadow: 0px 0px 25px rgba(131, 165, 255, 0.25);
   }
 
   &.-black {
     background-color: $black;
     border-radius: 100%;
-    fill: $white;
+    color: $white;
   }
 
   &.-medium {
     height: 42px;
     width: 42px;
+    svg {
+      height: 30px;
+      width: 30px;
+    }
   }
 
   &.-big {
     height: 98px;
     width: 98px;
+    svg {
+      height: 50px;
+      width: 50px;
+    }
   }
 }
 </style>

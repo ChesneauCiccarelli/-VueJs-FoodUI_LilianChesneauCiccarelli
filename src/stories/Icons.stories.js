@@ -29,7 +29,7 @@ export default {
     },
     variant: {
       control: 'select',
-      options: ['Default', 'Primary', 'White', 'Black']
+      options: ['Default', 'Primary', 'Secondary', 'White', 'Black']
     },
     size: {
       control: 'select',
