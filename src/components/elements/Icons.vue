@@ -28,6 +28,7 @@ const props = defineProps({
 
 const className = computed(() => ({
   ' -primary': props.variant === 'Primary',
+  ' -secondary': props.variant === 'Secondary',
   ' -white': props.variant === 'White',
   ' -black': props.variant === 'Black',
   ' -small': props.size === 'Small',
@@ -97,6 +98,12 @@ const getIcon = computed(() => {
     background-color: $primary-color;
     border-radius: 100%;
     fill: $white;
+  }
+
+  &.-secondary {
+    background-color: $secondary-color;
+    border-radius: 100%;
+    fill: $primary-color;
   }
 
   &.-white {

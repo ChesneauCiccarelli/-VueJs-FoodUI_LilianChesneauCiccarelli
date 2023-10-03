@@ -1,24 +1,32 @@
 <script setup>
 import Star from '@/components/icons/ui/star/Star.vue'
 import MyButton from '@/components/elements/MyButton.vue'
+
+const props = defineProps({
+  title: String,
+  rating: String,
+  price: String,
+  imgSrc: String,
+  imgAlt: String
+})
 </script>
 
 <template>
   <div class="card">
     <div class="card__image">
-      <slot name="image"></slot>
+      <img :src="imgSrc" :alt="imgAlt" />
     </div>
     <div class="card__content">
       <div class="card__content--top">
-        <slot name="title"></slot>
+        <h2>{{ title }}</h2>
         <div class="card__content--rating">
           <Star class="Star" />
-          <slot name="rating"></slot>
+          <p>{{ rating }}</p>
         </div>
       </div>
       <div class="card__content--bottom">
-        <MyButton size="small" variant="rounded">Add to cart</MyButton>
-        <slot name="price"></slot>
+        <MyButton size="Small" variant="Rounded">Add to cart</MyButton>
+        <p>${{ price }}</p>
       </div>
     </div>
   </div>
@@ -29,19 +37,22 @@ import MyButton from '@/components/elements/MyButton.vue'
   background: $white;
   border-radius: 35px;
   box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.1);
-  height: rem(485);
-  width: rem(485);
+  height: fit-content;
+  max-width: rem(380);
+  overflow: hidden;
+  width: fit-content;
 
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 20px;
+    gap: 10px;
+    padding: 16px 32px 42px 32px;
 
     font-family: Helvetica, sans-serif;
   }
 
   &__content--top {
+    align-items: center;
     display: flex;
     justify-content: space-between;
 
