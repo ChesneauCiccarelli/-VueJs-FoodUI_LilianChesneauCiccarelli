@@ -1,8 +1,8 @@
 <script setup>
-import Star from '@/components/icons/ui/star/Star.vue'
+import Star from '@/components/icons/ui/star/StarIcon.vue'
 import MyButton from '@/components/elements/MyButton.vue'
 
-const props = defineProps({
+defineProps({
   title: String,
   rating: String,
   price: String,
