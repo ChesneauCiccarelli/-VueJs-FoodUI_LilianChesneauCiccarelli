@@ -9,16 +9,19 @@ export default {
     },
     size: {
       control: 'select',
-      options: ['regular', 'small']
+      options: ['Regular', 'Small', 'Medium']
     },
     variant: {
       control: 'select',
-      options: ['default', 'rounded']
+      options: ['Default', 'Rounded']
+    },
+    showIcon: {
+      control: 'boolean'
     }
   }
 }
 
-export const PrimaryButton = {
+export const OrderBTN = {
   render: (args) => {
     return {
       components: {
@@ -27,65 +30,43 @@ export const PrimaryButton = {
       setup() {
         return { args }
       },
-      template: `<MyButton v-bind="args" >Button</MyButton>`
+      template: `<MyButton v-bind="args" >{{ args.text }}</MyButton>`
     }
   },
   args: {
-    size: 'regular',
-    variant: 'default'
+    size: 'Regular',
+    variant: 'Default',
+    text: 'Order Now',
+    showIcon: false
   }
 }
 
-export const SecondaryButton = {
-  render: (args) => {
-    return {
-      components: {
-        MyButton
-      },
-      setup() {
-        return { args }
-      },
-      template: `<MyButton v-bind="args" >My link Button</MyButton>`
-    }
-  },
+export const LearnMore = {
+  ...OrderBTN,
   args: {
-    size: 'regular',
-    variant: 'rounded'
+    size: 'Medium',
+    variant: 'Rounded',
+    text: 'Learn More',
+    showIcon: false
   }
 }
 
-export const SmallPrimaryButton = {
-  render: (args) => {
-    return {
-      components: {
-        MyButton
-      },
-      setup() {
-        return { args }
-      },
-      template: `<MyButton v-bind="args" >My link Button</MyButton>`
-    }
-  },
+export const SeeMore = {
+  ...OrderBTN,
   args: {
-    size: 'small',
-    variant: 'default'
+    size: 'Small',
+    variant: 'Rounded',
+    text: 'See More Products',
+    showIcon: true
   }
 }
 
-export const SmallSecondaryButton = {
-  render: (args) => {
-    return {
-      components: {
-        MyButton
-      },
-      setup() {
-        return { args }
-      },
-      template: `<MyButton v-bind="args" >My link Button</MyButton>`
-    }
-  },
+export const OrderNow = {
+  ...OrderBTN,
   args: {
-    size: 'small',
-    variant: 'rounded'
+    size: 'Small',
+    variant: 'Rounded',
+    text: 'Order Now',
+    showIcon: false
   }
 }
