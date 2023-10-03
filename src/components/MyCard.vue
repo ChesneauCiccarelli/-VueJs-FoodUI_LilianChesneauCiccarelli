@@ -1,7 +1,7 @@
 <script setup>
-import Icon from './elements/Icons.vue'
+import Icon from './elements/MyIcons.vue'
 
-const props = defineProps({
+defineProps({
   title: String,
   description: String,
   iconName: String,

@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import Icon from '@/components/elements/Icons.vue'
+import Icon from '@/components/elements/MyIcons.vue'
 
 const props = defineProps({
   href: String,
