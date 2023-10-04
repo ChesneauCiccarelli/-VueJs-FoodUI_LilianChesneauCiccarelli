@@ -6,10 +6,7 @@ const props = defineProps({
   href: String,
   size: String,
   variant: String,
-  showIcon: {
-    type: Boolean,
-    default: false
-  }
+  showIcon: Boolean
 })
 
 const className = computed(() => ({
