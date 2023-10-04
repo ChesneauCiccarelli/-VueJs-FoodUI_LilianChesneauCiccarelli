@@ -8,12 +8,12 @@ const props = defineProps({
   iconName: String,
   iconVariant: String,
   iconSize: String,
-  style: String
+  styleCard: String
 })
 
 const className = computed(() => ({
-  ' -neuOver': props.style === 'Neu-Over',
-  ' -neuPressed': props.style === 'Neu-Pressed'
+  ' -neuOver': props.styleCard === 'Neu-Over',
+  ' -neuPressed': props.styleCard === 'Neu-Pressed'
 }))
 </script>
 
