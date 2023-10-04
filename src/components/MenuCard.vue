@@ -38,7 +38,6 @@ defineProps({
   border-radius: 35px;
   box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.1);
   height: fit-content;
-  max-width: rem(380);
   overflow: hidden;
   width: fit-content;
 
