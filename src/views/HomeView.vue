@@ -1,10 +1,13 @@
 <script setup>
-import Section from '@/components/layouts/SectionLayout.vue'
-import MenuLayout from '@/components/layouts/MenuLayout.vue'
-import Button from '@/components/elements/MyButton.vue'
 import Card from '@/components/MyCard.vue'
 import ProcessCard from '@/components/ProcessCard.vue'
+import NewsLetter from '@/components/NewsLetter.vue'
+
 import Icon from '@/components/elements/MyIcons.vue'
+import Button from '@/components/elements/MyButton.vue'
+
+import Section from '@/components/layouts/SectionLayout.vue'
+import MenuLayout from '@/components/layouts/MenuLayout.vue'
 </script>
 
 <template>
@@ -21,7 +24,7 @@ import Icon from '@/components/elements/MyIcons.vue'
 
     <Section class="section" section="Services" title="Why Choose Our Favorite Food">
       <template #content>
-        <div class="flex">
+        <div class="flex sectionServices__container">
           <Card
             title="Qualityfull Food"
             description="But I must explain to you how all this mistaken idea of denouncing pleasur and prasising pain was bron."
@@ -112,6 +115,8 @@ import Icon from '@/components/elements/MyIcons.vue'
         </div>
       </template>
     </Section>
+
+    <NewsLetter />
   </main>
 </template>
 
@@ -145,6 +150,9 @@ main {
 }
 
 // Second Section
+.sectionServices__container {
+  gap: rem(50);
+}
 
 // Third Section
 div.process {

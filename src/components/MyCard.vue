@@ -33,7 +33,6 @@ const className = computed(() => ({
   display: flex;
   flex-direction: column;
   gap: rem(42);
-  max-width: rem(300);
   padding: rem(103) rem(52);
 
   font-family: Helvetica, sans-serif;
