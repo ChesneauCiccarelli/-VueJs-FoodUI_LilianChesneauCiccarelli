@@ -1,17 +1,24 @@
 <script setup>
+import { computed } from 'vue'
 import Icon from './elements/MyIcons.vue'
 
-defineProps({
+const props = defineProps({
   title: String,
   description: String,
   iconName: String,
   iconVariant: String,
-  iconSize: String
+  iconSize: String,
+  style: String
 })
+
+const className = computed(() => ({
+  ' -neuOver': props.style === 'Neu-Over',
+  ' -neuPressed': props.style === 'Neu-Pressed'
+}))
 </script>
 
 <template>
-  <div class="card">
+  <div class="card" :class="className">
     <Icon :name="iconName" :variant="iconVariant" :size="iconSize"></Icon>
     <h2 class="card__title">{{ title }}</h2>
     <p class="card__description">{{ description }}</p>
@@ -22,7 +29,6 @@ defineProps({
 .card {
   align-items: center;
   background: $white;
-  border: 1px solid #b6b6b6;
   border-radius: 35px;
   display: flex;
   flex-direction: column;
@@ -32,6 +38,14 @@ defineProps({
 
   font-family: Helvetica, sans-serif;
   text-align: center;
+
+  &.-neuOver {
+    box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  &.-neuPressed {
+    border: 1px solid #b6b6b6;
+  }
 
   &__title {
     font-size: $medium-font-size;
