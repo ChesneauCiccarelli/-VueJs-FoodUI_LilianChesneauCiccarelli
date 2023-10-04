@@ -18,6 +18,10 @@ export default {
     },
     iconSize: {
       control: 'text'
+    },
+    style: {
+      control: 'select',
+      options: ['Neu-Over', 'Neu-Pressed']
     }
   }
 }
@@ -40,7 +44,8 @@ export const Card_1 = {
       'But I must explain to you how all this mistaken idea of denouncing pleasur and prasising pain was bron.',
     iconName: 'Food_2',
     iconVariant: 'Secondary',
-    iconSize: 'Medium'
+    iconSize: 'Medium',
+    style: 'Neu-Pressed'
   }
 }
 
@@ -51,7 +56,8 @@ export const Card_2 = {
       'But I must explain to you how all this mistaken idea of denouncing pleasur and prasising pain was bron.',
     iconName: 'Food_1',
     iconVariant: 'Secondary',
-    iconSize: 'Medium'
+    iconSize: 'Medium',
+    style: 'Neu-Over'
   }
 }
 
@@ -62,6 +68,7 @@ export const Card_3 = {
       'But I must explain to you how all this mistaken idea of denouncing pleasur and prasising pain was bron.',
     iconName: 'Delivery',
     iconVariant: 'Secondary',
-    iconSize: 'Medium'
+    iconSize: 'Medium',
+    style: 'Neu-Pressed'
   }
 }
