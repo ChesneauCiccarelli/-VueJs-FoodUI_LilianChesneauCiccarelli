@@ -19,7 +19,7 @@ export default {
     iconSize: {
       control: 'text'
     },
-    style: {
+    styleCard: {
       control: 'select',
       options: ['Neu-Over', 'Neu-Pressed']
     }
@@ -45,7 +45,7 @@ export const Card_1 = {
     iconName: 'Food_2',
     iconVariant: 'Secondary',
     iconSize: 'Medium',
-    style: 'Neu-Pressed'
+    styleCard: 'Neu-Pressed'
   }
 }
 
@@ -57,7 +57,7 @@ export const Card_2 = {
     iconName: 'Food_1',
     iconVariant: 'Secondary',
     iconSize: 'Medium',
-    style: 'Neu-Over'
+    styleCard: 'Neu-Over'
   }
 }
 
@@ -69,6 +69,6 @@ export const Card_3 = {
     iconName: 'Delivery',
     iconVariant: 'Secondary',
     iconSize: 'Medium',
-    style: 'Neu-Pressed'
+    styleCard: 'Neu-Pressed'
   }
 }
