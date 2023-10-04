@@ -2,17 +2,33 @@
 import Card from '@/components/MyCard.vue'
 import ProcessCard from '@/components/ProcessCard.vue'
 import NewsLetter from '@/components/NewsLetter.vue'
+import HLP from '@/components/HLP.vue'
 
 import Icon from '@/components/elements/MyIcons.vue'
 import Button from '@/components/elements/MyButton.vue'
 
 import Section from '@/components/layouts/SectionLayout.vue'
 import MenuLayout from '@/components/layouts/MenuLayout.vue'
+
+import LineSVG from '@/components/icons/svg/LineSVG.vue'
 </script>
 
 <template>
   <main>
     <h1>Hello World</h1>
+
+    <section class="flex sectionHLP">
+      <div class="flex1">
+        <HLP title="Today 10:00am - 10:00pm" description="Working time" iconName="Clock" />
+      </div>
+      <div class="flex1 sectionHLP-m">
+        <HLP title="Washington, D.C., DC,USA" description="Our Location" iconName="Localisation" />
+      </div>
+      <div class="flex1">
+        <HLP title="+0123 456 7891" description="Phone Number" iconName="Phone" />
+      </div>
+    </section>
+
     <Section class="section" section="Product" title="Most Popular Items">
       <template #content>
         <MenuLayout></MenuLayout>
@@ -60,13 +76,16 @@ import MenuLayout from '@/components/layouts/MenuLayout.vue'
     >
       <template #content>
         <div class="flex process">
+          <LineSVG class="LineSVG__1" />
           <ProcessCard
+            class="process__1"
             title="Choose"
             description="Do you want to lose weight, exercise, adhere to a therapeutic diet? Our dietitian will help you with choosing the right program!"
             imgSrc="src/assets/img/pc.png"
             imgAlt="Image of a computer"
           />
           <ProcessCard
+            class="process__2"
             title="Prepare Food"
             description="Do you want to lose weight, exercise, adhere to a therapeutic diet? Our dietitian will help you with choosing the right program!"
             imgSrc="src/assets/img/chicken.png"
@@ -74,11 +93,13 @@ import MenuLayout from '@/components/layouts/MenuLayout.vue'
             reverse
           />
           <ProcessCard
+            class="process__3"
             title="Deliver"
             description="Do you want to lose weight, exercise, adhere to a therapeutic diet? Our dietitian will help you with choosing the right program!"
             imgSrc="src/assets/img/package.png"
             imgAlt="Image of a to go bag"
           />
+          <LineSVG class="LineSVG__2" />
         </div>
       </template>
     </Section>
@@ -142,6 +163,24 @@ main {
   flex: 1;
 }
 
+// HLP
+section.sectionHLP {
+  background-color: $white;
+  border-radius: rem(50);
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.1);
+  padding: rem(60) 0;
+}
+
+.sectionHLP-m {
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+// .sectionHLP div:nth-child(2) {
+//   border-left: 2px solid $black;
+//   border-right: 2px solid $black;
+// }
+
 // First Section
 .product__button {
   display: flex;
@@ -157,14 +196,29 @@ main {
 // Third Section
 div.process {
   text-align: center;
+  position: relative;
 
-  :first-child {
+  &__1 {
     text-align: left;
   }
 
-  :last-child {
+  &__3 {
     text-align: right;
   }
+}
+
+.LineSVG__1 {
+  position: absolute;
+  left: 9%;
+  rotate: -5deg;
+  z-index: -1;
+}
+.LineSVG__2 {
+  position: absolute;
+  right: 9%;
+  rotate: 5deg;
+  transform: scale(-1, 1);
+  z-index: -1;
 }
 
 // Fourth Section
