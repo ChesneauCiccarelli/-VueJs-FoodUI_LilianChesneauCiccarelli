@@ -38,42 +38,42 @@ const className = computed(() => ({
 
 const getIcon = computed(() => {
   switch (props.name) {
-    case 'Cart':
-      return Cart
-    case 'Clock':
-      return Clock
-    case 'Phone':
-      return Phone
-    case 'Play':
-      return Play
-    case 'Localisation':
-      return Localisation
-    case 'Search':
-      return Search
-    case 'Star':
-      return Star
-    case 'ArrowLeft':
-      return ArrowLeft
-    case 'ArrowRight':
-      return ArrowRight
-    case 'Next':
-      return Next
-    case 'Previous':
-      return Previous
-    case 'Food_1':
-      return Food_1
-    case 'Food_2':
-      return Food_2
-    case 'Delivery':
-      return Delivery
-    case 'Facebook':
-      return Facebook
-    case 'Instagram':
-      return Instagram
-    case 'LinkedIn':
-      return LinkedIn
-    default:
-      return Twitter
+  case 'Cart':
+    return Cart
+  case 'Clock':
+    return Clock
+  case 'Phone':
+    return Phone
+  case 'Play':
+    return Play
+  case 'Localisation':
+    return Localisation
+  case 'Search':
+    return Search
+  case 'Star':
+    return Star
+  case 'ArrowLeft':
+    return ArrowLeft
+  case 'ArrowRight':
+    return ArrowRight
+  case 'Next':
+    return Next
+  case 'Previous':
+    return Previous
+  case 'Food_1':
+    return Food_1
+  case 'Food_2':
+    return Food_2
+  case 'Delivery':
+    return Delivery
+  case 'Facebook':
+    return Facebook
+  case 'Instagram':
+    return Instagram
+  case 'LinkedIn':
+    return LinkedIn
+  default:
+    return Twitter
   }
 })
 </script>
