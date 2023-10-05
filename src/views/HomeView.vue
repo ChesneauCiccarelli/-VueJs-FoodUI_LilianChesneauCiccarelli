@@ -3,6 +3,7 @@ import Card from '@/components/MyCard.vue'
 import ProcessCard from '@/components/ProcessCard.vue'
 import NewsLetter from '@/components/NewsLetter.vue'
 import HLP from '@/components/HLP.vue'
+import MyFooter from '@/components/MyFooter.vue'
 
 import Icon from '@/components/elements/MyIcons.vue'
 import Button from '@/components/elements/MyButton.vue'
@@ -139,6 +140,10 @@ import LineSVG from '@/components/icons/svg/LineSVG.vue'
 
     <NewsLetter />
   </main>
+
+  <footer>
+    <MyFooter />
+  </footer>
 </template>
 
 <style lang="scss" scoped>
@@ -180,6 +185,7 @@ section.sectionHLP {
 //   border-left: 2px solid $black;
 //   border-right: 2px solid $black;
 // }
+// // // // Marche pas
 
 // First Section
 .product__button {
