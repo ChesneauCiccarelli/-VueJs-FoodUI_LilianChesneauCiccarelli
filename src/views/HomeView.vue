@@ -1,4 +1,5 @@
 <script setup>
+import Header from '@/components/MyHeader.vue'
 import Card from '@/components/MyCard.vue'
 import ProcessCard from '@/components/ProcessCard.vue'
 import NewsLetter from '@/components/NewsLetter.vue'
@@ -15,9 +16,11 @@ import LineSVG from '@/components/icons/svg/LineSVG.vue'
 </script>
 
 <template>
-  <main>
-    <h1>Hello World</h1>
+  <header>
+    <Header></Header>
+  </header>
 
+  <main>
     <section class="flex sectionHLP">
       <div class="flex1">
         <HLP title="Today 10:00am - 10:00pm" description="Working time" iconName="Clock" />
@@ -34,7 +37,7 @@ import LineSVG from '@/components/icons/svg/LineSVG.vue'
       <template #content>
         <MenuLayout></MenuLayout>
         <div class="product__button">
-          <Button size="Small" variant="Rounded" href="#" showIcon>See More Products</Button>
+          <Button size="Small" variant="Rounded" showIcon>See More Products</Button>
         </div>
       </template>
     </Section>
