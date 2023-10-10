@@ -7,7 +7,6 @@ import HLP from '@/components/HLP.vue'
 import MyFooter from '@/components/MyFooter.vue'
 
 import Icon from '@/components/elements/MyIcons.vue'
-import Button from '@/components/elements/MyButton.vue'
 
 import Section from '@/components/layouts/SectionLayout.vue'
 import MenuLayout from '@/components/layouts/MenuLayout.vue'
@@ -39,9 +38,6 @@ import LineSVG from '@/components/icons/svg/LineSVG.vue'
     <Section class="section" section="Product" title="Most Popular Items">
       <template #content>
         <MenuLayout></MenuLayout>
-        <div class="product__button">
-          <Button size="Small" variant="Rounded" showIcon>See More Products</Button>
-        </div>
       </template>
     </Section>
 
@@ -194,11 +190,6 @@ section.sectionHLP {
 // // // // Marche pas
 
 // First Section
-.product__button {
-  display: flex;
-  justify-content: center;
-  margin-top: rem(50);
-}
 
 // Second Section
 .sectionServices__container {

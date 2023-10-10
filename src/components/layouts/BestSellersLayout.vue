@@ -13,8 +13,10 @@ const getRecipesAxios = async () => {
   return response.data
 }
 
+const recipesBestSellers = 4
 const bestSellers = computed(() => {
-  return recipes.value.filter((item) => item.image_url.toLowerCase().includes('.png'))
+  // return recipes.value.filter((item) => item.image_url.toLowerCase().includes('.png'))
+  return recipes.value.slice(0, recipesBestSellers)
 })
 
 onMounted(async () => {
