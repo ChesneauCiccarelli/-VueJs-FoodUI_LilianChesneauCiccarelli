@@ -46,6 +46,7 @@ defineProps({
     display: flex;
     flex-direction: column;
     gap: 10px;
+    height: rem(110);
     padding: 120px 30px 40px 30px;
     margin-top: -140px;
   }
