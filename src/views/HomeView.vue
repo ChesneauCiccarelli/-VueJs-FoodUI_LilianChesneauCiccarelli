@@ -11,6 +11,7 @@ import Button from '@/components/elements/MyButton.vue'
 
 import Section from '@/components/layouts/SectionLayout.vue'
 import MenuLayout from '@/components/layouts/MenuLayout.vue'
+import Hero from '@/components/layouts/HeroLayout.vue'
 
 import LineSVG from '@/components/icons/svg/LineSVG.vue'
 </script>
@@ -21,6 +22,8 @@ import LineSVG from '@/components/icons/svg/LineSVG.vue'
   </header>
 
   <main>
+    <Hero></Hero>
+
     <section class="flex sectionHLP">
       <div class="flex1">
         <HLP title="Today 10:00am - 10:00pm" description="Working time" iconName="Clock" />
