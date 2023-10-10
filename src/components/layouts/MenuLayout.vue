@@ -1,17 +1,39 @@
 <script setup>
 import MenuCard from '@/components/MenuCard.vue'
+import { computed, onMounted, ref } from 'vue'
+
+import axios from 'axios'
+const client = axios.create({
+  baseURL: import.meta.env.VITE_API_URL
+})
+
+const recipes = ref([])
+const getRecipesAxios = async () => {
+  const response = await client.get('/recipes')
+  return response.data
+}
+
+const menuItems = computed(() => {
+  return recipes.value.filter((item) => item.image_url.toLowerCase().includes('.jpg'))
+})
+
+onMounted(async () => {
+  recipes.value = await getRecipesAxios()
+})
 </script>
 
 <template>
   <div class="grid">
     <MenuCard
-      title="Gyro Sandwich"
-      rating="4.9"
-      price="15.00"
-      imgSrc="src/assets/img/gyro.jpg"
+      v-for="recipe in menuItems"
+      :key="recipe.id"
+      :title="recipe.recipe_name"
+      :rating="recipe.rating"
+      :price="recipe.price"
+      :imgSrc="'src/assets/img/' + recipe.image_url"
       imgAlt="Image of a gyro sandwich"
     ></MenuCard>
-    <MenuCard
+    <!-- <MenuCard
       title="Enchilade"
       rating="5.0"
       price="22.50"
@@ -45,7 +67,7 @@ import MenuCard from '@/components/MenuCard.vue'
       price="15.00"
       imgSrc="src/assets/img/salad.jpg"
       imgAlt="Image of a salad"
-    ></MenuCard>
+    ></MenuCard> -->
   </div>
 </template>
 

@@ -1,4 +1,5 @@
 <script setup>
+import Header from '@/components/MyHeader.vue'
 import Card from '@/components/MyCard.vue'
 import ProcessCard from '@/components/ProcessCard.vue'
 import NewsLetter from '@/components/NewsLetter.vue'
@@ -10,13 +11,18 @@ import Button from '@/components/elements/MyButton.vue'
 
 import Section from '@/components/layouts/SectionLayout.vue'
 import MenuLayout from '@/components/layouts/MenuLayout.vue'
+import Hero from '@/components/layouts/HeroLayout.vue'
 
 import LineSVG from '@/components/icons/svg/LineSVG.vue'
 </script>
 
 <template>
+  <header>
+    <Header></Header>
+  </header>
+
   <main>
-    <h1>Hello World</h1>
+    <Hero></Hero>
 
     <section class="flex sectionHLP">
       <div class="flex1">
@@ -34,7 +40,7 @@ import LineSVG from '@/components/icons/svg/LineSVG.vue'
       <template #content>
         <MenuLayout></MenuLayout>
         <div class="product__button">
-          <Button size="Small" variant="Rounded" href="#" showIcon>See More Products</Button>
+          <Button size="Small" variant="Rounded" showIcon>See More Products</Button>
         </div>
       </template>
     </Section>
