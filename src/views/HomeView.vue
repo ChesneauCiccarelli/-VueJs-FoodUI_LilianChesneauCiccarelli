@@ -134,7 +134,7 @@ import LineSVG from '@/components/icons/svg/LineSVG.vue'
           </div>
 
           <div class="flex1">
-            <img src="src/assets/img/burgerfriesmenu.png" alt="Image of a familly menu" />
+            <img src="src/assets/img/menu.png" alt="Image of a familly menu" />
           </div>
         </div>
       </template>
