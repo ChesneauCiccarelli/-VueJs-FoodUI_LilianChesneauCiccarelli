@@ -1,11 +1,7 @@
 <script setup>
 import MiniCard from '@/components/MiniCard.vue'
 import { computed, onMounted, ref } from 'vue'
-
-import axios from 'axios'
-const client = axios.create({
-  baseURL: import.meta.env.VITE_API_URL
-})
+import { client } from '@/utils/axios.js'
 
 const recipes = ref([])
 const getRecipesAxios = async () => {
@@ -13,8 +9,10 @@ const getRecipesAxios = async () => {
   return response.data
 }
 
+const recipesBestSellers = 4
 const bestSellers = computed(() => {
-  return recipes.value.filter((item) => item.image_url.toLowerCase().includes('.png'))
+  // return recipes.value.filter((item) => item.image_url.toLowerCase().includes('.png'))
+  return recipes.value.slice(0, recipesBestSellers)
 })
 
 onMounted(async () => {

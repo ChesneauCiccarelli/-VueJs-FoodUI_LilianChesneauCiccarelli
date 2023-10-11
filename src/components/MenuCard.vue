@@ -1,13 +1,13 @@
 <script setup>
 import Star from '@/components/icons/ui/star/StarIcon.vue'
 import MyButton from '@/components/elements/MyButton.vue'
-
 defineProps({
   title: String,
   rating: String,
   price: String,
   imgSrc: String,
-  imgAlt: String
+  imgAlt: String,
+  href: String
 })
 </script>
 
@@ -25,7 +25,7 @@ defineProps({
         </div>
       </div>
       <div class="card__content--bottom">
-        <MyButton size="Small" variant="Rounded">Add to cart</MyButton>
+        <MyButton size="Small" variant="Rounded" :href="href">Add to cart</MyButton>
         <p>${{ price }}</p>
       </div>
     </div>

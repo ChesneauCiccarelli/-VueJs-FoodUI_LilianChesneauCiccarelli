@@ -1,11 +1,8 @@
 <script setup>
 import MenuCard from '@/components/MenuCard.vue'
+import Button from '@/components/elements/MyButton.vue'
 import { computed, onMounted, ref } from 'vue'
-
-import axios from 'axios'
-const client = axios.create({
-  baseURL: import.meta.env.VITE_API_URL
-})
+import { client } from '@/utils/axios.js'
 
 const recipes = ref([])
 const getRecipesAxios = async () => {
@@ -13,9 +10,23 @@ const getRecipesAxios = async () => {
   return response.data
 }
 
+const recipesBestSellers = 4
+const gridPage = ref(1)
 const menuItems = computed(() => {
-  return recipes.value.filter((item) => item.image_url.toLowerCase().includes('.jpg'))
+  const recipesByPage = 6
+  return recipes.value.slice(
+    recipesBestSellers,
+    recipesBestSellers + recipesByPage * gridPage.value
+  )
 })
+
+const moreRecipesToShow = computed(() => {
+  return menuItems.value.length < recipes.value.length - recipesBestSellers
+})
+
+const showMore = () => {
+  gridPage.value++
+}
 
 onMounted(async () => {
   recipes.value = await getRecipesAxios()
@@ -32,43 +43,19 @@ onMounted(async () => {
       :price="recipe.price"
       :imgSrc="'src/assets/img/' + recipe.image_url"
       imgAlt="Image of a gyro sandwich"
+      :href="`/recipes/${recipe.recipe_id}`"
     ></MenuCard>
-    <!-- <MenuCard
-      title="Enchilade"
-      rating="5.0"
-      price="22.50"
-      imgSrc="src/assets/img/enchilade.jpg"
-      imgAlt="Image of an enchilade"
-    ></MenuCard>
-    <MenuCard
-      title="Green Beans"
-      rating="4.9"
-      price="12.00"
-      imgSrc="src/assets/img/greenbeans.jpg"
-      imgAlt="Image of a green beans"
-    ></MenuCard>
-    <MenuCard
-      title="Pizza"
-      rating="5.0"
-      price="18.50"
-      imgSrc="src/assets/img/pizza.jpg"
-      imgAlt="Image of a pizza"
-    ></MenuCard>
-    <MenuCard
-      title="Chicken Pot Pie"
-      rating="4.9"
-      price="25.00"
-      imgSrc="src/assets/img/chickenpot.jpg"
-      imgAlt="Image of a chicken pot pie"
-    ></MenuCard>
-    <MenuCard
-      title="Green Salad"
-      rating="4.9"
-      price="15.00"
-      imgSrc="src/assets/img/salad.jpg"
-      imgAlt="Image of a salad"
-    ></MenuCard> -->
   </div>
+  <Button
+    v-if="moreRecipesToShow"
+    class="product__button"
+    size="Small"
+    variant="Rounded"
+    showIcon
+    @click="showMore"
+  >
+    See More Products
+  </Button>
 </template>
 
 <style lang="scss" scoped>
@@ -76,5 +63,11 @@ onMounted(async () => {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 40px;
+}
+
+.product__button {
+  display: flex;
+  justify-content: center;
+  margin-top: rem(50);
 }
 </style>
