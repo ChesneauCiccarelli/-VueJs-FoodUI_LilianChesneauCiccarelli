@@ -6,7 +6,7 @@ import Newsletter from '@/components/elements/MyNewsletter.vue'
 <template>
   <section class="footer">
     <div class="footer__item">
-      <img class="footer__item--image" src="src/assets/img/logo.png" alt="Brand Logo" />
+      <img class="footer__item--image" src="../../src/assets/img/logo.png" alt="Brand Logo" />
       <p class="footer__item--text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo libero viverra dapibus odio
         sit malesuada in quis. Arcu tristique elementum viverra integer id.

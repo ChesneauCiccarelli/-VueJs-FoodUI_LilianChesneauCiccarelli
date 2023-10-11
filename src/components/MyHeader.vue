@@ -5,7 +5,7 @@ import Searchbar from '@/components/elements/Searchbar.vue'
 <template>
   <div class="header">
     <div class="header__logo">
-      <img src="src/assets/img/logo.png" alt="Logo" />
+      <img src="../../src/assets/img/logo.png" alt="Logo" />
     </div>
     <div class="header__links">
       <a href="#">Home</a>

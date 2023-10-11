@@ -1,11 +1,7 @@
 <script setup>
 import MiniCard from '@/components/MiniCard.vue'
 import { computed, onMounted, ref } from 'vue'
-
-import axios from 'axios'
-const client = axios.create({
-  baseURL: import.meta.env.VITE_API_URL
-})
+import { client } from '@/utils/axios.js'
 
 const recipes = ref([])
 const getRecipesAxios = async () => {

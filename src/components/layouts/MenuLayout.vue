@@ -2,11 +2,7 @@
 import MenuCard from '@/components/MenuCard.vue'
 import Button from '@/components/elements/MyButton.vue'
 import { computed, onMounted, ref } from 'vue'
-
-import axios from 'axios'
-const client = axios.create({
-  baseURL: import.meta.env.VITE_API_URL
-})
+import { client } from '@/utils/axios.js'
 
 const recipes = ref([])
 const getRecipesAxios = async () => {
@@ -47,6 +43,7 @@ onMounted(async () => {
       :price="recipe.price"
       :imgSrc="'src/assets/img/' + recipe.image_url"
       imgAlt="Image of a gyro sandwich"
+      :href="`/recipes/${recipe.recipe_id}`"
     ></MenuCard>
   </div>
   <Button
